@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pizza Calculator</title>
+    <!-- Include Materialize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Include Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+    <header class="light-blue darken-1 white-text">
+        <div class="container" style="padding-top: 30px; padding-bottom: 30px">
+            <h4 class="center" style="font-weight: 200; margin: 0;">Pizza Rate Calculator</h4>
+        </div>
+        <!-- <nav>
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="#" class="brand-logo center">Pizza Rate Calculator</a>
+                </div>
+            </div>
+        </nav> -->
+    </header>
+    <main>
+        <div class="container">
+
+            <p>Enter the diameter of your pizzas (in inches or cm, doesn't matter as long as you enter all in inches or
+                all in centimetres) along with the price. We'll calculate the area per unit price you're paying for that
+                pizza.
+                <br>
+                <b>The higher that number, the less you're paying for more pizza.</b>
+            </p>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Diameter</th>
+                        <th>Price</th>
+                        <th>Pizza<sup>2</sup> per money</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="pizza-list">
+                    <!-- Table rows will be added dynamically using JavaScript -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <input type="number" id="diameter" min="0">
+                        </td>
+                        <td>
+                            <input type="number" id="price" min="0">
+                        </td>
+                        <td>
+                            <span id="sqInPerDollar">0</span>
+                        </td>
+                        <td>
+                            <i class="material-icons delete-icon" onclick="deletePizza()">delete</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center">
+                            <i class="material-icons add-icon" onclick="addPizza()">add</i>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </main>
+
+    <footer class="page-footer light-blue darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <p class="grey-text text-lighten-4">Made by <a href="https://kartikaybagla.com" target="_blank"
+                            class="white-text"><b>Kartikay Bagla</b></a> at 4AM in the morning.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Materialize.js and custom JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
